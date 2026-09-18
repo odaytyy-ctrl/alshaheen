@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy policy for ALSHAHEEN, a MetaTrader 5 analysis and trading terminal for Windows.">
+<meta name="robots" content="index, follow">
+<style>
+  html { color-scheme: light dark; }
+  body { margin: 0; font: 14px system-ui, sans-serif; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>ALSHAHEEN Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+
+<style>
+  :root {
+    --ground:      #faf8f4;
+    --panel:       #f3efe6;
+    --ink:         #1c1814;
+    --ink-soft:    #554d43;
+    --ink-muted:   #7d7466;
+    --accent:      #8a6a1f;
+    --accent-soft: #b99433;
+    --rule:        #e2dacb;
+    --rule-strong: #cdc2ad;
+    --fact:        #3a4c58;
+    --fact-bg:     #eef1f0;
+    --code-bg:     #efeadf;
+    --shadow:      0 1px 2px rgba(40, 32, 16, .06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:      #100e0a;
+      --panel:       #1a1712;
+      --ink:         #ece5d7;
+      --ink-soft:    #b9b0a0;
+      --ink-muted:   #8d8477;
+      --accent:      #d8ac4e;
+      --accent-soft: #a8842f;
+      --rule:        #2c261d;
+      --rule-strong: #423a2c;
+      --fact:        #a8bcc7;
+      --fact-bg:     #171b1e;
+      --code-bg:     #1e1a13;
+      --shadow:      0 1px 2px rgba(0, 0, 0, .4);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:      #100e0a;
+    --panel:       #1a1712;
+    --ink:         #ece5d7;
+    --ink-soft:    #b9b0a0;
+    --ink-muted:   #8d8477;
+    --accent:      #d8ac4e;
+    --accent-soft: #a8842f;
+    --rule:        #2c261d;
+    --rule-strong: #423a2c;
+    --fact:        #a8bcc7;
+    --fact-bg:     #171b1e;
+    --code-bg:     #1e1a13;
+    --shadow:      0 1px 2px rgba(0, 0, 0, .4);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.1rem, 5vw, 2rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead { display: flex; flex-direction: column; gap: .85rem; }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .72rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-family: Fraunces, Georgia, "Times New Roman", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.1rem, 6vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -.015em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .standfirst {
+    font-size: 1.12rem;
+    color: var(--ink-soft);
+    max-width: 34rem;
+    margin: 0;
+  }
+
+  .stamp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem 1.4rem;
+    padding-top: .85rem;
+    border-top: 1px solid var(--rule);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .78rem;
+    color: var(--ink-muted);
+  }
+  .stamp b { color: var(--ink-soft); font-weight: 500; }
+
+  /* ---------- the three plain statements ---------- */
+  .plainly {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 0;
+    border: 1px solid var(--rule-strong);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--panel);
+  }
+  .plainly div {
+    padding: 1.1rem 1.25rem;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+  }
+  .plainly div:last-child { border-right: none; }
+  .plainly strong {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--accent);
+    letter-spacing: -.01em;
+  }
+  .plainly span { font-size: .93rem; color: var(--ink-soft); line-height: 1.5; }
+
+  /* ---------- sections ---------- */
+  section { display: flex; flex-direction: column; gap: .9rem; }
+
+  h2 {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin: 0;
+    letter-spacing: -.01em;
+    display: flex;
+    align-items: baseline;
+    gap: .7rem;
+    text-wrap: balance;
+  }
+  h2 .num {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .74rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: .06em;
+    flex: none;
+    padding-top: .1rem;
+  }
+
+  p { margin: 0; }
+  p + p { margin-top: .7rem; }
+
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .42rem; }
+  li::marker { color: var(--accent-soft); }
+
+  code, .mono {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .86em;
+    background: var(--code-bg);
+    padding: .1em .38em;
+    border-radius: 2px;
+  }
+
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* ---------- the file table ---------- */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--rule-strong); border-radius: 3px; }
+  table { border-collapse: collapse; width: 100%; min-width: 33rem; }
+  caption {
+    caption-side: bottom;
+    text-align: left;
+    padding: .7rem .9rem;
+    font-size: .84rem;
+    color: var(--ink-muted);
+    border-top: 1px solid var(--rule);
+  }
+  th, td {
+    text-align: left;
+    padding: .55rem .9rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  thead th {
+    background: var(--fact-bg);
+    color: var(--fact);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .7rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  tbody th {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .84rem;
+    font-weight: 400;
+    white-space: nowrap;
+    color: var(--ink);
+  }
+  td { font-size: .95rem; color: var(--ink-soft); }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: none; }
+
+  /* ---------- the one thing that leaves the machine ---------- */
+  .flagged {
+    border-left: 3px solid var(--accent);
+    background: var(--panel);
+    padding: 1.05rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+  }
+  .flagged .label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .7rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .contact {
+    border: 1px solid var(--rule-strong);
+    background: var(--panel);
+    padding: 1.2rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .contact .addr {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 1.05rem;
+    letter-spacing: -.01em;
+    word-break: break-all;
+  }
+  .contact .addr a { text-decoration-thickness: 1px; }
+  .contact .note { font-size: .93rem; color: var(--ink-soft); }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.25rem;
+    color: var(--ink-muted);
+    font-size: .88rem;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+  }
+
+  @media (max-width: 34rem) {
+    .plainly div { border-right: none; border-bottom: 1px solid var(--rule); }
+    .plainly div:last-child { border-bottom: none; }
+  }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">ALSHAHEEN &middot; Privacy</div>
+    <h1>Privacy Policy</h1>
+    <p class="standfirst">ALSHAHEEN is a MetaTrader&nbsp;5 analysis and trading terminal for Windows. It runs entirely on your own computer, and the developer receives none of your data.</p>
+    <div class="stamp">
+      <span><b>Effective</b> 18 September 2026</span>
+      <span><b>Version</b> 1.0.0.0</span>
+      <span><b>Publisher</b> ALSHAHEEN</span>
+    </div>
+  </header>
+
+  <div class="plainly">
+    <div>
+      <strong>Nothing is sent to us</strong>
+      <span>No telemetry, no analytics, no crash reports, no user accounts.</span>
+    </div>
+    <div>
+      <strong>Nothing is sold</strong>
+      <span>Your data is never sold, shared, rented or used for advertising.</span>
+    </div>
+    <div>
+      <strong>Everything stays local</strong>
+      <span>Your trading records are written to your own disk and stay there.</span>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="num">01</span>Who this policy is from</h2>
+    <p>ALSHAHEEN (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is published and operated by an individual developer trading under that name. This policy covers the ALSHAHEEN desktop application distributed through the Microsoft Store, and nothing else.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>What the app reads</h2>
+    <p>ALSHAHEEN does not ask you for personal details, and it has no sign-up or login of its own. It reads information from the <strong>MetaTrader&nbsp;5 terminal already installed and signed in on the same computer</strong>, using MetaQuotes&rsquo; own Python interface. That information is:</p>
+    <ul>
+      <li>your broker account number, broker name and trade server name;</li>
+      <li>account balance, equity, margin and leverage;</li>
+      <li>your open positions and their stop loss and take profit levels;</li>
+      <li>instrument prices, spreads and candle history for the symbols you analyse.</li>
+    </ul>
+    <p>All of it is read locally, on demand, and used only to draw the interface and to decide the trades you have armed. None of it is transmitted to us.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>What the app writes, and where</h2>
+    <p>ALSHAHEEN keeps working files on your own machine so it can show your history and resume after a restart. When installed from the Microsoft Store these live under <code>%LOCALAPPDATA%\ALSHAHEEN</code>.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th scope="col">File</th><th scope="col">What it holds</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">alshaheen.log</th><td>The running log: what the program did, and every warning and error it raised.</td></tr>
+          <tr><th scope="row">trades.csv</th><td>A journal of trades opened and closed, with prices, volumes and results.</td></tr>
+          <tr><th scope="row">auto_state.json</th><td>Which instruments you have armed for automatic trading.</td></tr>
+          <tr><th scope="row">spread_history.json</th><td>Spread readings collected during the session, per instrument and per day.</td></tr>
+          <tr><th scope="row">heartbeat.json</th><td>A liveness file so a watchdog can tell a working program from a wedged one.</td></tr>
+          <tr><th scope="row">powers&#8203;/&lt;symbol&gt;.json</th><td>Your per-instrument settings, which you can edit yourself at any time.</td></tr>
+        </tbody>
+      </table>
+      <caption>These files never leave your computer. You can open, edit, back up or delete any of them.</caption>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>The one connection the app makes</h2>
+    <div class="flagged">
+      <span class="label">Stated plainly</span>
+      <p>When ALSHAHEEN detects that the link to your broker has dropped, it opens a plain TCP connection to <span class="mono">8.8.8.8:53</span> (Google Public&nbsp;DNS) and <span class="mono">1.1.1.1:53</span> (Cloudflare) to find out whether your own internet is down or the broker&rsquo;s server is unreachable. <strong>No data is sent and no query is made</strong> &mdash; the connection is opened and closed. As with any internet connection, the operator of those addresses can see that your IP address contacted them.</p>
+    </div>
+    <p>That is the only outbound connection ALSHAHEEN itself makes. The connection to your broker is opened by the MetaTrader&nbsp;5 terminal, not by ALSHAHEEN, and is governed by your broker&rsquo;s and MetaQuotes&rsquo; own terms.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Your subscription</h2>
+    <p>ALSHAHEEN is sold as a monthly subscription through the Microsoft Store. <strong>Microsoft handles the entire purchase.</strong> The app asks Windows a single question &mdash; whether this copy currently holds an active subscription &mdash; through the standard <span class="mono">Windows.Services.Store</span> interface.</p>
+    <p>We never see, receive or store your name, payment card, billing address or Microsoft account. Purchases and refunds are covered by the <a href="https://privacy.microsoft.com/privacystatement" rel="noopener noreferrer" target="_blank">Microsoft Privacy Statement</a>.</p>
+    <p>The answer Windows gives is cached locally so the app keeps working during a short outage. That cache records only the date of the last successful check.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Third parties</h2>
+    <ul>
+      <li><strong>Your broker.</strong> Orders you place through ALSHAHEEN are sent to your own broker by MetaTrader&nbsp;5. Their privacy policy applies to your account with them.</li>
+      <li><strong>MetaQuotes.</strong> MetaTrader&nbsp;5 is their software, installed and signed in by you.</li>
+      <li><strong>Microsoft.</strong> Distribution, payment and subscription management.</li>
+    </ul>
+    <p>There are no other third parties. ALSHAHEEN contains no advertising, no tracking pixels and no third-party analytics.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Keeping and deleting your data</h2>
+    <p>Because your data never reaches us, there is nothing on our side to retain, export or erase. Everything lives on your machine for as long as you keep it.</p>
+    <p>To remove it: uninstall ALSHAHEEN from Windows Settings, then delete the <code>%LOCALAPPDATA%\ALSHAHEEN</code> folder. That is complete &mdash; no copy is held anywhere else.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Your rights</h2>
+    <p>Data-protection law gives you the right to access, correct, export and erase personal data a company holds about you. We hold none, so those rights are satisfied by design rather than by request &mdash; you already have direct, unmediated access to every file the app writes.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>Children</h2>
+    <p>ALSHAHEEN is financial software for adults and is not directed at children. It is not intended for anyone under 18, and it collects nothing from anyone of any age.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>Security</h2>
+    <p>ALSHAHEEN stores no passwords and no broker credentials &mdash; it never sees them, because you sign in to MetaTrader&nbsp;5 yourself. The working files described above are ordinary files protected by your own Windows user account.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">11</span>Changes to this policy</h2>
+    <p>If this policy changes, the effective date at the top changes with it and the updated version is published at this address. Material changes will also be noted in the app&rsquo;s Store listing.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">12</span>Contact</h2>
+    <div class="contact">
+      <div class="addr"><a href="mailto:alshaheensupport@gmail.com">alshaheensupport@gmail.com</a></div>
+      <div class="note">Write to this address with any question about this policy, about what ALSHAHEEN reads from your computer, or about the files it keeps there. It is also the support address for the Microsoft Store listing.</div>
+    </div>
+    <p>Questions about a purchase, a renewal or a refund are handled by Microsoft, not by us &mdash; use the Store&rsquo;s own support, which can see your order and we cannot.</p>
+  </section>
+
+  <footer>
+    <div>ALSHAHEEN &mdash; MetaTrader&nbsp;5 analysis and trading terminal for Windows.</div>
+    <div>&copy; 2026 ALSHAHEEN. Trading carries risk of loss; nothing in this application is investment advice.</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

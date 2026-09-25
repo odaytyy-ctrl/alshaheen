@@ -296,8 +296,8 @@
     <h1>Privacy Policy</h1>
     <p class="standfirst">ALSHAHEEN is a MetaTrader&nbsp;5 analysis and trading terminal for Windows. It runs entirely on your own computer, and the developer receives none of your data.</p>
     <div class="stamp">
-      <span><b>Effective</b> 18 September 2026</span>
-      <span><b>Version</b> 1.0.0.0</span>
+      <span><b>Effective</b> 25 September 2026</span>
+      <span><b>Version</b> 1.0.2.0</span>
       <span><b>Publisher</b> ALSHAHEEN</span>
     </div>
   </header>
@@ -324,59 +324,83 @@
 
   <section>
     <h2><span class="num">02</span>What the app reads</h2>
-    <p>ALSHAHEEN does not ask you for personal details, and it has no sign-up or login of its own. It reads information from the <strong>MetaTrader&nbsp;5 terminal already installed and signed in on the same computer</strong>, using MetaQuotes&rsquo; own Python interface. That information is:</p>
+    <p>ALSHAHEEN does not ask you for personal details, and it has no sign-up or login of its own. It reads information from the <strong>MetaTrader&nbsp;5 terminal installed and signed in on the same computer</strong>, using MetaQuotes&rsquo; own Python interface. That information is:</p>
     <ul>
-      <li>your broker account number, broker name and trade server name;</li>
-      <li>account balance, equity, margin and leverage;</li>
-      <li>your open positions and their stop loss and take profit levels;</li>
-      <li>instrument prices, spreads and candle history for the symbols you analyse.</li>
+      <li>your broker account number, the broker&rsquo;s name, the trade server name and the account currency;</li>
+      <li>account balance, equity, margin, free margin and leverage;</li>
+      <li>your open positions &mdash; ticket, volume, prices, stop loss, take profit and floating profit &mdash; and the account&rsquo;s recent deal history;</li>
+      <li>instrument prices, spreads, candle and tick history, and the broker&rsquo;s list of instruments with their contract specifications.</li>
     </ul>
-    <p>All of it is read locally, on demand, and used only to draw the interface and to decide the trades you have armed. None of it is transmitted to us.</p>
+    <p>MetaTrader&nbsp;5 hands over the whole account record at once, and that record also contains the account holder&rsquo;s name. ALSHAHEEN does not use that name and does not keep or write it anywhere.</p>
+    <p>To find the terminal, the app looks at the names of the programs running on your computer and at the program folders on your disk. If no terminal is running, it may start the one you installed. So that it can read their prices, it may add the instruments you use to MetaTrader&nbsp;5&rsquo;s Market Watch list.</p>
+    <p>All of it is read locally, repeatedly while the app runs &mdash; every few seconds &mdash; and used to draw the interface, to size and check the trades you place or arm, and to measure your exposure. Some of it is written into the files listed in section&nbsp;03. None of it is transmitted to us.</p>
   </section>
 
   <section>
     <h2><span class="num">03</span>What the app writes, and where</h2>
-    <p>ALSHAHEEN keeps working files on your own machine so it can show your history and resume after a restart. When installed from the Microsoft Store these live under <code>%LOCALAPPDATA%\ALSHAHEEN</code>.</p>
+    <p>ALSHAHEEN keeps working files on your own machine so it can show your history and resume after a restart. When installed from the Microsoft Store it uses two folders: a data folder, <code>%LOCALAPPDATA%\ALSHAHEEN</code>, and a log folder inside it, <code>%LOCALAPPDATA%\ALSHAHEEN\logs</code>. Because ALSHAHEEN is a Microsoft Store app, Windows may keep these folders in the app&rsquo;s own private storage instead (under <code>%LOCALAPPDATA%\Packages\</code>), where they are removed together with the app.</p>
+    <p><strong>Log folder</strong></p>
     <div class="tablewrap">
       <table>
         <thead>
           <tr><th scope="col">File</th><th scope="col">What it holds</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row">alshaheen.log</th><td>The running log: what the program did, and every warning and error it raised.</td></tr>
-          <tr><th scope="row">trades.csv</th><td>A journal of trades opened and closed, with prices, volumes and results.</td></tr>
-          <tr><th scope="row">auto_state.json</th><td>Which instruments you have armed for automatic trading.</td></tr>
-          <tr><th scope="row">spread_history.json</th><td>Spread readings collected during the session, per instrument and per day.</td></tr>
-          <tr><th scope="row">heartbeat.json</th><td>A liveness file so a watchdog can tell a working program from a wedged one.</td></tr>
-          <tr><th scope="row">powers&#8203;/&lt;symbol&gt;.json</th><td>Your per-instrument settings, which you can edit yourself at any time.</td></tr>
+          <tr><th scope="row">alshaheen.log (and .1 to .3)</th><td>The running log, kept to about 20&nbsp;MB across four files: what the program did, and every warning and error it raised. It contains your <strong>account number, trade server, balance and equity</strong>, the trades opened and closed with their results, the state of your subscription, and folder paths that include your Windows user name.</td></tr>
+          <tr><th scope="row">trades.csv</th><td>A journal of trades opened, closed and skipped: time, instrument, timeframe, direction, price, result and reason.</td></tr>
+          <tr><th scope="row">spread_evidence.txt</th><td>Each unusually wide spread the app measured, with your <strong>account number and trade server</strong> and your open positions (ticket, lots, entry, stop loss, take profit and floating profit), so you can put timestamped evidence in front of your broker.</td></tr>
+          <tr><th scope="row">audit_latest.txt, audit_&lt;date&gt;.jsonl</th><td>The result of each position check, with your <strong>account number, trade server and equity</strong> and your open positions.</td></tr>
+          <tr><th scope="row">auto_state.json</th><td>Which instruments you have armed for automatic trading, on which timeframe and at which lot size, and any that are held back.</td></tr>
+          <tr><th scope="row">flips_&lt;date&gt;.jsonl</th><td>Changes of signal on the instruments you hold.</td></tr>
+          <tr><th scope="row">spread_history.json</th><td>Today&rsquo;s spread readings, per instrument.</td></tr>
+          <tr><th scope="row">heartbeat.json</th><td>A liveness file for the supervisor: the time, the process, how many positions are open and armed, and your equity.</td></tr>
+          <tr><th scope="row">watchdog.log</th><td>The supervisor&rsquo;s own record: when it started, and any alarm it raised.</td></tr>
         </tbody>
       </table>
-      <caption>These files never leave your computer. You can open, edit, back up or delete any of them.</caption>
     </div>
+    <p><strong>Data folder</strong></p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th scope="col">File</th><th scope="col">What it holds</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">powers\, symbols_json\, s_powers.json, user_symbols.json, broker\symbol_overrides.json</th><td>Your per-instrument settings and the list of instruments you use. Created from the app&rsquo;s defaults on first start, changed when you add an instrument or use &ldquo;Rebuild for this broker&rdquo;, and editable by you at any time. If the list of instruments cannot be read, the old file is kept beside it as <code>user_symbols.json.corrupt</code>.</td></tr>
+          <tr><th scope="row">powers_backup_&lt;date&gt;\</th><td>A copy of those settings, made each time you use &ldquo;Rebuild for this broker&rdquo;.</td></tr>
+          <tr><th scope="row">broker_seen.json</th><td>The <strong>account number and trade server</strong> last attached, so the app can notice a change of broker.</td></tr>
+          <tr><th scope="row">license_state.json</th><td>The time of the last successful subscription check, its result and the add-on&rsquo;s Store ID. See section&nbsp;05.</td></tr>
+          <tr><th scope="row">notice_accepted.json</th><td>The date and time you accepted the notice shown at first start.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>While saving, the app writes some files first to a short-lived <code>.tmp</code> copy and then replaces the original with it. The charting library may also leave small temporary folders in Windows&rsquo; temporary folder; they hold a list of font file paths and nothing about your trading.</p>
+    <p>These files never leave your computer. You can open, edit, back up or delete any of them. Advanced users can move both folders with the <code>ALSHAHEEN_DATA</code> and <code>ALSHAHEEN_LOG_DIR</code> environment variables.</p>
   </section>
 
   <section>
     <h2><span class="num">04</span>The one connection the app makes</h2>
     <div class="flagged">
       <span class="label">Stated plainly</span>
-      <p>When ALSHAHEEN detects that the link to your broker has dropped, it opens a plain TCP connection to <span class="mono">8.8.8.8:53</span> (Google Public&nbsp;DNS) and <span class="mono">1.1.1.1:53</span> (Cloudflare) to find out whether your own internet is down or the broker&rsquo;s server is unreachable. <strong>No data is sent and no query is made</strong> &mdash; the connection is opened and closed. As with any internet connection, the operator of those addresses can see that your IP address contacted them.</p>
+      <p>While the link to your broker is down, ALSHAHEEN checks every few seconds whether your own internet is working. It opens a plain TCP connection to <strong>8.8.8.8:53</strong> (Google Public DNS) and, only if that fails, to <strong>1.1.1.1:53</strong> (Cloudflare). No data is sent and no query is made &mdash; the connection is opened and closed. As with any internet connection, the operator of those addresses can see that your IP address contacted them.</p>
     </div>
-    <p>That is the only outbound connection ALSHAHEEN itself makes. The connection to your broker is opened by the MetaTrader&nbsp;5 terminal, not by ALSHAHEEN, and is governed by your broker&rsquo;s and MetaQuotes&rsquo; own terms.</p>
+    <p>That is the only outbound connection ALSHAHEEN itself makes. The subscription check in section&nbsp;05 is carried out by Windows. The links to these terms and this policy open in your web browser, and the Subscribe button opens the Microsoft Store app, only when you click them. The connection to your broker is opened by the MetaTrader&nbsp;5 terminal, not by ALSHAHEEN, and is governed by your broker&rsquo;s and MetaQuotes&rsquo; own terms.</p>
   </section>
 
   <section>
     <h2><span class="num">05</span>Your subscription</h2>
-    <p>ALSHAHEEN is sold as a monthly subscription through the Microsoft Store. <strong>Microsoft handles the entire purchase.</strong> The app asks Windows a single question &mdash; whether this copy currently holds an active subscription &mdash; through the standard <span class="mono">Windows.Services.Store</span> interface.</p>
+    <p>ALSHAHEEN is sold as a monthly subscription through the Microsoft Store. Microsoft handles the entire purchase. Through the standard <code>Windows.Services.Store</code> interface the app asks Windows whether this copy currently holds an active subscription and when it ends, and &mdash; if none is found &mdash; whether your Microsoft account has ever owned it. It asks once after each start and again when you press <em>Check again</em>.</p>
     <p>We never see, receive or store your name, payment card, billing address or Microsoft account. Purchases and refunds are covered by the <a href="https://privacy.microsoft.com/privacystatement" rel="noopener noreferrer" target="_blank">Microsoft Privacy Statement</a>.</p>
-    <p>The answer Windows gives is cached locally so the app keeps working during a short outage. That cache records only the date of the last successful check.</p>
+    <p>A successful answer is cached locally in <code>license_state.json</code>, so the app keeps working for up to 30&nbsp;days if the Store cannot be reached. That file holds the time of the last successful check, its result and the add-on&rsquo;s Store ID &mdash; nothing about you.</p>
   </section>
 
   <section>
     <h2><span class="num">06</span>Third parties</h2>
     <ul>
-      <li><strong>Your broker.</strong> Orders you place through ALSHAHEEN are sent to your own broker by MetaTrader&nbsp;5. Their privacy policy applies to your account with them.</li>
+      <li><strong>Your broker.</strong> Orders you place through ALSHAHEEN are sent to your own broker by MetaTrader&nbsp;5. Each order carries the app&rsquo;s identifier (the magic number 20360000 and the comment &ldquo;SHAHEEN_&lt;timeframe&gt;&rdquo;), so your broker can see that it came from ALSHAHEEN. Their privacy policy applies to your account with them.</li>
       <li><strong>MetaQuotes.</strong> MetaTrader&nbsp;5 is their software, installed and signed in by you.</li>
       <li><strong>Microsoft.</strong> Distribution, payment and subscription management.</li>
+      <li><strong>Google and Cloudflare.</strong> Only the connection described in section&nbsp;04, which shows them your IP address and nothing else.</li>
+      <li><strong>GitHub.</strong> These pages are hosted on GitHub Pages; GitHub sees your IP address when you open them.</li>
     </ul>
     <p>There are no other third parties. ALSHAHEEN contains no advertising, no tracking pixels and no third-party analytics.</p>
   </section>
@@ -384,12 +408,12 @@
   <section>
     <h2><span class="num">07</span>Keeping and deleting your data</h2>
     <p>Because your data never reaches us, there is nothing on our side to retain, export or erase. Everything lives on your machine for as long as you keep it.</p>
-    <p>To remove it: uninstall ALSHAHEEN from Windows Settings, then delete the <code>%LOCALAPPDATA%\ALSHAHEEN</code> folder. That is complete &mdash; no copy is held anywhere else.</p>
+    <p>To remove it: uninstall ALSHAHEEN from Windows Settings. If Windows kept the app&rsquo;s files in its private storage, they are removed with it; otherwise delete the <code>%LOCALAPPDATA%\ALSHAHEEN</code> folder, which holds both folders. If you moved them with the environment variables in section&nbsp;03, delete those folders too. Your broker and MetaQuotes keep their own records of your account and your orders, under their own policies.</p>
   </section>
 
   <section>
     <h2><span class="num">08</span>Your rights</h2>
-    <p>Data-protection law gives you the right to access, correct, export and erase personal data a company holds about you. We hold none, so those rights are satisfied by design rather than by request &mdash; you already have direct, unmediated access to every file the app writes.</p>
+    <p>Data-protection law gives you the right to access, correct, export and erase personal data a company holds about you. We hold none, so those rights are satisfied by design rather than by request &mdash; every file the app writes is listed in section&nbsp;03 and is on your own computer.</p>
   </section>
 
   <section>
@@ -399,7 +423,7 @@
 
   <section>
     <h2><span class="num">10</span>Security</h2>
-    <p>ALSHAHEEN stores no passwords and no broker credentials &mdash; it never sees them, because you sign in to MetaTrader&nbsp;5 yourself. The working files described above are ordinary files protected by your own Windows user account.</p>
+    <p>ALSHAHEEN never sees and never stores your broker password &mdash; you sign in to MetaTrader&nbsp;5 yourself. It does write your account number and trade server name into the files listed in section&nbsp;03; treat those files as private. They are ordinary plain-text files, protected by your own Windows user account.</p>
   </section>
 
   <section>

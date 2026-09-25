@@ -252,24 +252,6 @@
     color: var(--accent);
   }
 
-  /* ---------- unfinished: for the owner, not for the reader ---------- */
-  .owner {
-    border: 1px dashed var(--accent);
-    border-radius: 3px;
-    background: var(--panel);
-    padding: 1.05rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-  }
-  .owner .label {
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-size: .7rem;
-    letter-spacing: .13em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-  .owner p { font-size: .95rem; color: var(--ink-soft); }
   .fillin {
     display: inline-block;
     min-width: 16rem;
@@ -319,8 +301,8 @@
     <h1>Terms of Use</h1>
     <p class="standfirst">ALSHAHEEN is a MetaTrader&nbsp;5 analysis and trading terminal for Windows. It sends orders to the broker you are already signed in to. Every one of those orders is yours.</p>
     <div class="stamp">
-      <span><b>Effective</b> 18 September 2026</span>
-      <span><b>Version</b> 1.0.0.0</span>
+      <span><b>Effective</b> 25 September 2026</span>
+      <span><b>Version</b> 1.0.2.0</span>
       <span><b>Publisher</b> ALSHAHEEN</span>
     </div>
   </header>
@@ -345,11 +327,6 @@
     <p>ALSHAHEEN (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is published and operated by an individual developer trading under that name. There is no company behind it.</p>
     <p>These terms cover the ALSHAHEEN desktop application distributed through the Microsoft Store and its monthly subscription add-on, and nothing else. They are published at this address and linked from the application&rsquo;s Microsoft Store listing. By installing or using the application you agree to them; if you do not, do not install it, and cancel the subscription in the Microsoft Store.</p>
     <p>Microsoft is not a party to these terms. Microsoft distributes the application and handles the purchase; the licence to use it is granted by us, to you.</p>
-    <div class="owner">
-      <span class="label">Owner &mdash; two decisions before publishing</span>
-      <p><strong>One.</strong> The sentence above is only as strong as the reader&rsquo;s chance of having seen this page. There is no About box, no Help window, no menu bar and no first-run screen in the application today, so nothing in the running program links here. Either add a surface in the program that links to this page and to the privacy policy, or soften that sentence.</p>
-      <p><strong>Two.</strong> Do these terms <strong>supplement</strong> Microsoft&rsquo;s Standard Application License Terms, or <strong>replace</strong> them? Leaving Partner Center&rsquo;s &ldquo;Additional license terms&rdquo; field blank means the Standard Terms govern by themselves; putting this page&rsquo;s URL in that field means this page applies instead. Supplementing is the lower-risk choice for an individual developer, because the Standard Terms already carry consumer-rights wording adapted per market. Nothing in this draft assumes an answer.</p>
-    </div>
   </section>
 
   <section>
@@ -381,7 +358,7 @@
     <p>You may not reverse engineer, decompile or disassemble the application, or attempt to derive its methods, rules or thresholds from it, except to the extent that applicable law expressly permits despite this term.</p>
     <p>The application, its interface, its analysis and the rules it trades by remain ours. Nothing here transfers ownership of any of it.</p>
     <p><strong>Third-party components.</strong> The application ships with software written by others, under their own licences and not ours: MetaQuotes&rsquo; MetaTrader&nbsp;5 Python interface, and the open-source libraries it is built on, including pandas, NumPy, Matplotlib, psutil and Microsoft&rsquo;s Windows Runtime Python projections. Nothing in the paragraph above claims ownership of any of them, and their licences continue to apply to them.</p>
-    <p>The working files ALSHAHEEN writes on your computer are yours. You can open, edit, back up or delete any of them at any time. They are left where they are when a subscription lapses and when the application is uninstalled; removing the application does not delete them, and you can delete them yourself.</p>
+    <p>The working files ALSHAHEEN writes on your computer are yours. You can open, edit, back up or delete any of them at any time. They are left where they are when a subscription lapses. When the application is uninstalled, Windows may remove them with it, because a Microsoft Store app can keep its files in its own storage; the Privacy Policy says where they are. You can delete them yourself at any time.</p>
   </section>
 
   <section>
@@ -397,10 +374,6 @@
       <li><strong>Nothing on sale, or no package identity.</strong> If the Store has no such product to buy, or the copy was not installed from the Store, nothing is gated.</li>
     </ul>
     <p>When arming is held back for want of a subscription, the application states what still works: everything already armed keeps running, open positions are untouched, and closing still works.</p>
-    <div class="owner">
-      <span class="label">Owner &mdash; decide on the last bullet</span>
-      <p>The final bullet is true, and nothing obliges you to publish the two conditions under which the paid gate does not apply. It is the one line on this page that works against you commercially rather than for the customer. Keep it or cut it &mdash; but if you cut it, cut nothing else from that list: the other five states all affect a paying customer, and the 30-day one can end their access while they are still paying.</p>
-    </div>
   </section>
 
   <section>
@@ -492,10 +465,6 @@
       <li>you can see and close every position in MetaTrader&nbsp;5 yourself, whether ALSHAHEEN is running or not;</li>
       <li>the market decides the rest, and nobody controls it.</li>
     </ul>
-    <div class="owner">
-      <span class="label">Owner &mdash; not drafted here</span>
-      <p>A <strong>monetary cap</strong> and any <strong>dispute-resolution clause</strong> are deliberately absent. Microsoft&rsquo;s Standard Application License Terms already cap what can be recovered from a publisher at the amount paid for the application; whether this page restates that, replaces it, or leaves it alone is a legal drafting decision, and it cannot be settled before section&nbsp;14 is. Have this section and section&nbsp;09 read by a lawyer in whichever law you name there.</p>
-    </div>
   </section>
 
   <section>
@@ -514,13 +483,8 @@
     <h2><span class="num">12</span>Privacy</h2>
     <p>What ALSHAHEEN reads, what it writes and where it keeps it is set out in the <a href="privacy.html">Privacy Policy</a>, published separately at this site. In short: nothing is sent to us. There is no telemetry, no analytics, no crash reporting and no user account, and the files it writes stay on your own disk, in a logs folder and a data folder under your own Windows profile.</p>
     <p><strong>No credential is ever held.</strong> ALSHAHEEN has no login of its own and no field anywhere in it for a broker login, password or server name. You sign in to MetaTrader&nbsp;5 yourself, and ALSHAHEEN attaches to that already-signed-in terminal. It never sees your credentials, so it cannot store them or lose them.</p>
-    <p>It does read your account number, balance, equity, margin and leverage from the terminal, because it cannot size a trade or measure your exposure without them. Two of the files it writes on your computer contain the account number and the trade server name: the application log, and <span class="mono">spread_evidence.txt</span>, which records each wide-spread reading so you can put timestamped evidence in front of your broker. Both stay on your disk.</p>
+    <p>It does read your account number, balance, equity, margin and leverage from the terminal, because it cannot size a trade or measure your exposure without them. Several of the files it writes on your computer contain the account number and the trade server name &mdash; among them the application log and <span class="mono">spread_evidence.txt</span>, which records each wide-spread reading so you can put timestamped evidence in front of your broker. The Privacy Policy lists every one of them. All of them stay on your disk.</p>
     <p>The only outbound connection the application itself makes is a reachability test opened to <span class="mono">8.8.8.8:53</span> and <span class="mono">1.1.1.1:53</span> after the broker link drops, to tell your own internet being down from the broker being unreachable. No data is sent. The connection to your broker is made by MetaTrader&nbsp;5, not by ALSHAHEEN.</p>
-    <div class="owner">
-      <span class="label">Owner &mdash; fix the policy before this page adopts it</span>
-      <p>This section deliberately <strong>does not</strong> say the Privacy Policy &ldquo;forms part of these terms&rdquo;. Incorporating it by reference would make its errors contractual, and it currently has four: its file table lists six files while the program writes many more; <span class="mono">spread_evidence.txt</span> holds the broker account number and server name and is not listed at all; it says the licence cache records only the date of the last successful check, when it also holds the verdict state and the add-on identifier; and it says the files live in one folder under <span class="mono">%LOCALAPPDATA%\ALSHAHEEN</span>, when there are two, each resolved separately and each overridable by an environment variable. Fix those, then decide whether to incorporate it. Shipping the first-run panel adds one further file its table does not list.</p>
-      <p>The link above is written as <span class="mono">privacy.html</span>, which is correct only if this page is published in the <strong>same folder</strong> as the privacy policy. If it is not, replace it with the policy&rsquo;s full address.</p>
-    </div>
   </section>
 
   <section>
@@ -549,10 +513,6 @@
       <div class="note">Write to this address with any question about these terms, about what the application does, or about how to stop it doing it. It is also the support address for the Microsoft Store listing.</div>
     </div>
     <p>Questions about a purchase, a renewal or a refund are handled by Microsoft, not by us &mdash; use the Store&rsquo;s own support, which can see your order and we cannot. Questions about your account, your positions, spreads, swaps, execution or withdrawals are your broker&rsquo;s, not ours.</p>
-    <div class="owner">
-      <span class="label">Owner &mdash; decide</span>
-      <p>Whether a <strong>postal address for legal notices</strong> appears here at all. The privacy policy carries this one email address and no address, and Partner Center requires contact details only from company accounts. Nothing in the record settles it.</p>
-    </div>
   </section>
 
   <footer>

@@ -294,22 +294,22 @@
   <header class="masthead">
     <div class="eyebrow">ALSHAHEEN &middot; Privacy</div>
     <h1>Privacy Policy</h1>
-    <p class="standfirst">ALSHAHEEN is a MetaTrader&nbsp;5 analysis and trading terminal for Windows. It runs entirely on your own computer, and the developer receives none of your data.</p>
+    <p class="standfirst">ALSHAHEEN is a MetaTrader&nbsp;5 analysis and trading terminal for Windows. It runs on your own computer, and the developer receives none of your trading data. The only data a copy bought on Whop sends out is its licence check, described in section&nbsp;05.</p>
     <div class="stamp">
-      <span><b>Effective</b> 25 September 2026</span>
-      <span><b>Version</b> 1.0.2.0</span>
+      <span><b>Effective</b> 14 October 2026</span>
+      <span><b>Version</b> 1.0.4.0</span>
       <span><b>Publisher</b> ALSHAHEEN</span>
     </div>
   </header>
 
   <div class="plainly">
     <div>
-      <strong>Nothing is sent to us</strong>
-      <span>No telemetry, no analytics, no crash reports, no user accounts.</span>
+      <strong>No trading data is sent to us</strong>
+      <span>No telemetry, no analytics, no crash reports, no user accounts. A copy bought on Whop sends only its licence check.</span>
     </div>
     <div>
       <strong>Nothing is sold</strong>
-      <span>Your data is never sold, shared, rented or used for advertising.</span>
+      <span>Your data is never sold, rented or used for advertising. A copy bought on Whop shares only what its licence check needs, with Cloudflare and Whop (section&nbsp;05).</span>
     </div>
     <div>
       <strong>Everything stays local</strong>
@@ -319,12 +319,12 @@
 
   <section>
     <h2><span class="num">01</span>Who this policy is from</h2>
-    <p>ALSHAHEEN (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is published and operated by an individual developer trading under that name. This policy covers the ALSHAHEEN desktop application distributed through the Microsoft Store, and nothing else.</p>
+    <p>ALSHAHEEN (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is published and operated by an individual developer trading under that name. This policy covers the ALSHAHEEN desktop application, whether it came from the Microsoft Store or was bought on Whop (whop.com), and nothing else. Where the two copies differ, this policy says which one it means.</p>
   </section>
 
   <section>
     <h2><span class="num">02</span>What the app reads</h2>
-    <p>ALSHAHEEN does not ask you for personal details, and it has no sign-up or login of its own. It reads information from the <strong>MetaTrader&nbsp;5 terminal installed and signed in on the same computer</strong>, using MetaQuotes&rsquo; own Python interface. That information is:</p>
+    <p>ALSHAHEEN does not ask you for personal details, and it has no sign-up or login of its own; a copy bought on Whop asks only for its licence key (section&nbsp;05). It reads information from the <strong>MetaTrader&nbsp;5 terminal installed and signed in on the same computer</strong>, using MetaQuotes&rsquo; own Python interface. That information is:</p>
     <ul>
       <li>your broker account number, the broker&rsquo;s name, the trade server name and the account currency;</li>
       <li>account balance, equity, margin, free margin and leverage;</li>
@@ -338,7 +338,7 @@
 
   <section>
     <h2><span class="num">03</span>What the app writes, and where</h2>
-    <p>ALSHAHEEN keeps working files on your own machine so it can show your history and resume after a restart. When installed from the Microsoft Store it uses two folders: a data folder, <code>%LOCALAPPDATA%\ALSHAHEEN</code>, and a log folder inside it, <code>%LOCALAPPDATA%\ALSHAHEEN\logs</code>. Because ALSHAHEEN is a Microsoft Store app, Windows may keep these folders in the app&rsquo;s own private storage instead (under <code>%LOCALAPPDATA%\Packages\</code>), where they are removed together with the app.</p>
+    <p>ALSHAHEEN keeps working files on your own machine so it can show your history and resume after a restart. When installed from the Microsoft Store it uses two folders: a data folder, <code>%LOCALAPPDATA%\ALSHAHEEN</code>, and a log folder inside it, <code>%LOCALAPPDATA%\ALSHAHEEN\logs</code>. Because ALSHAHEEN is a Microsoft Store app, Windows may keep these folders in the app&rsquo;s own private storage instead (under <code>%LOCALAPPDATA%\Packages\</code>), where they are removed together with the app. A copy bought on Whop, unpacked from its ZIP file, uses a <code>data</code> folder and a <code>logs</code> folder next to <code>ALSHAHEEN.exe</code>; if the folder it was unpacked into cannot be written to, it uses the two <code>%LOCALAPPDATA%</code> folders above instead. A new version comes as a new ZIP file; unpacked to the same place as the old version, it leaves both folders, and the saved licence key in them, as they are (the <a href="terms.html">Terms of Use</a>, section&nbsp;05, say how).</p>
     <p><strong>Log folder</strong></p>
     <div class="tablewrap">
       <table>
@@ -369,28 +369,48 @@
           <tr><th scope="row">powers_backup_&lt;date&gt;\</th><td>A copy of those settings, made each time you use &ldquo;Rebuild for this broker&rdquo;.</td></tr>
           <tr><th scope="row">broker_seen.json</th><td>The <strong>account number and trade server</strong> last attached, so the app can notice a change of broker.</td></tr>
           <tr><th scope="row">license_state.json</th><td>The time of the last successful subscription check, its result and the add-on&rsquo;s Store ID. See section&nbsp;05.</td></tr>
+          <tr><th scope="row">licence.json</th><td>Only in a copy bought on Whop. Your <strong>licence key</strong>, the code that identifies this computer (section&nbsp;05), the time of the last successful licence check, the membership status and paid-until date Whop reported, the reason if the key was refused, and the latest time the program has read from this computer&rsquo;s clock. It is kept so you do not have to type the key at every start, so the program can keep working for up to 24&nbsp;hours without internet after the last good check, and so that a clock moved back is noticed. The file is sealed &mdash; the program can tell when it has been edited, and an edited file buys no offline time &mdash; but it is not encrypted. See section&nbsp;05.</td></tr>
           <tr><th scope="row">notice_accepted.json</th><td>The date and time you accepted the notice shown at first start.</td></tr>
         </tbody>
       </table>
     </div>
     <p>While saving, the app writes some files first to a short-lived <code>.tmp</code> copy and then replaces the original with it. The charting library may also leave small temporary folders in Windows&rsquo; temporary folder; they hold a list of font file paths and nothing about your trading.</p>
-    <p>These files never leave your computer. You can open, edit, back up or delete any of them. Advanced users can move both folders with the <code>ALSHAHEEN_DATA</code> and <code>ALSHAHEEN_LOG_DIR</code> environment variables.</p>
+    <p>These files never leave your computer. (The licence key and computer code in <code>licence.json</code> are sent to the licence server, as section&nbsp;05 describes; the file itself is not.) You can open, edit, back up or delete any of them. Advanced users can move both folders with the <code>ALSHAHEEN_DATA</code> and <code>ALSHAHEEN_LOG_DIR</code> environment variables.</p>
   </section>
 
   <section>
-    <h2><span class="num">04</span>The one connection the app makes</h2>
+    <h2><span class="num">04</span>The connections the app makes</h2>
     <div class="flagged">
       <span class="label">Stated plainly</span>
       <p>While the link to your broker is down, ALSHAHEEN checks every few seconds whether your own internet is working. It opens a plain TCP connection to <strong>8.8.8.8:53</strong> (Google Public DNS) and, only if that fails, to <strong>1.1.1.1:53</strong> (Cloudflare). No data is sent and no query is made &mdash; the connection is opened and closed. As with any internet connection, the operator of those addresses can see that your IP address contacted them.</p>
     </div>
-    <p>That is the only outbound connection ALSHAHEEN itself makes. The subscription check in section&nbsp;05 is carried out by Windows. The links to these terms and this policy open in your web browser, and the Subscribe button opens the Microsoft Store app, only when you click them. The connection to your broker is opened by the MetaTrader&nbsp;5 terminal, not by ALSHAHEEN, and is governed by your broker&rsquo;s and MetaQuotes&rsquo; own terms.</p>
+    <p>A copy from the Microsoft Store makes no other connection of its own: its subscription check in section&nbsp;05 is carried out by Windows. A copy bought on Whop makes one more: the licence check in section&nbsp;05, an encrypted HTTPS connection to the ALSHAHEEN licence server. The links to these terms and this policy open in your web browser, the Subscribe button opens the Microsoft Store app, and the <em>GET A KEY ON WHOP</em> button opens Whop&rsquo;s website in your browser, only when you click them. The connection to your broker is opened by the MetaTrader&nbsp;5 terminal, not by ALSHAHEEN, and is governed by your broker&rsquo;s and MetaQuotes&rsquo; own terms.</p>
   </section>
 
   <section>
     <h2><span class="num">05</span>Your subscription</h2>
-    <p>ALSHAHEEN is sold as a monthly subscription through the Microsoft Store. Microsoft handles the entire purchase. Through the standard <code>Windows.Services.Store</code> interface the app asks Windows whether this copy currently holds an active subscription and when it ends, and &mdash; if none is found &mdash; whether your Microsoft account has ever owned it. It asks once after each start and again when you press <em>Check again</em>.</p>
+    <p>ALSHAHEEN is sold as a subscription in two places, and each copy checks its subscription in its own way.</p>
+    <p><strong>A copy from the Microsoft Store</strong></p>
+    <p>Through the Microsoft Store, ALSHAHEEN is sold as a monthly subscription. Microsoft handles the entire purchase. Through the standard <code>Windows.Services.Store</code> interface the app asks Windows whether this copy currently holds an active subscription and when it ends, and &mdash; if none is found &mdash; whether your Microsoft account has ever owned it. It asks once after each start and again when you press <em>Check again</em>.</p>
     <p>We never see, receive or store your name, payment card, billing address or Microsoft account. Purchases and refunds are covered by the <a href="https://privacy.microsoft.com/privacystatement" rel="noopener noreferrer" target="_blank">Microsoft Privacy Statement</a>.</p>
     <p>A successful answer is cached locally in <code>license_state.json</code>, so the app keeps working for up to 30&nbsp;days if the Store cannot be reached. That file holds the time of the last successful check, its result and the add-on&rsquo;s Store ID &mdash; nothing about you.</p>
+    <p>A copy from the Microsoft Store does not make the Whop licence check below. The program leaves it out only when it is running as ALSHAHEEN&rsquo;s own Microsoft Store package; any other copy asks for a licence key.</p>
+    <p><strong>A copy bought on Whop</strong></p>
+    <p>On Whop (whop.com), ALSHAHEEN is sold as a monthly or yearly subscription. Each copy needs a licence key, which Whop gives you with your order, and the key is bound to one computer.</p>
+    <div class="flagged">
+      <span class="label">Stated plainly</span>
+      <p>A copy bought on Whop checks its licence when it starts, when you press <em>ACTIVATE</em> in its key window, and while it runs: about every 6&nbsp;hours, and more often while it cannot get an answer (the <a href="terms.html">Terms of Use</a>, section&nbsp;05, say exactly when). Each check sends these four things over an encrypted HTTPS connection to the ALSHAHEEN licence server (a Cloudflare Worker at <code>alshaheen-license.odaytyy.workers.dev</code>), and nothing else about you or your computer:</p>
+      <ul>
+        <li>your <strong>licence key</strong>;</li>
+        <li>a <strong>code that identifies this computer</strong>: a one-way SHA-256 hash of a fixed label together with Windows&rsquo; MachineGuid (an identifier Windows keeps in its registry), shortened to 32 characters. It holds no name and cannot be turned back into the MachineGuid, but it is pseudonymous, not anonymous: it is the same at every start on the same computer, which is what lets the key be bound to it, and it is stored with your Whop membership, so it is linked to your Whop account. Reinstalling or resetting Windows, or cloning it, can change the MachineGuid, and this code with it;</li>
+        <li>the application&rsquo;s name, ALSHAHEEN;</li>
+        <li>its version number.</li>
+      </ul>
+      <p>The program sends no trading data, no account number, no name and no e-mail address. Cloudflare, which hosts the licence server, ends the encrypted connection on its own servers, so it handles the whole request: the four things above, your IP address and the request&rsquo;s standard headers, which name ALSHAHEEN and its version and nothing about you. The licence server runs there too, so Whop&rsquo;s reply about your membership (below) is handled on Cloudflare&rsquo;s servers as well. The server&rsquo;s own code does not read your IP address, keeps no database and writes no log; Cloudflare may keep its own records of what it handles, under <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer" target="_blank">Cloudflare&rsquo;s privacy policy</a>.</p>
+    </div>
+    <p>The licence server asks Whop about the membership your key belongs to. Whop&rsquo;s reply holds the membership&rsquo;s own details &mdash; among them its product, its status, the end of its paid period and any computer code stored with it &mdash; and can also include your Whop user id, your Whop username and a phone number, if you gave Whop one at checkout or have shared one with us as the seller on Whop. It does not include your e-mail address. The server bases its answer only on the product, the status and the stored computer code, and keeps nothing from the reply. The program receives only that answer: yes, with the membership&rsquo;s status and the end of its paid period; or no, with the reason, and the status when the membership is not active. The first time a key is used, the server stores the computer code with that membership at Whop; that is what binds the key to one computer, and every later check compares the code it receives with the stored one. Apart from any records Cloudflare keeps (above), the only thing the check leaves outside your computer is that computer code, stored with your membership at Whop.</p>
+    <p>On your computer the program keeps the result in <code>licence.json</code>, in its data folder (section&nbsp;03): the key, the computer code, the time of the last successful check, the status and the paid-until date Whop reported, the reason if the key was refused, and the latest time it has read from the clock. That lets it start without asking for the key again, keep working for up to 24&nbsp;hours without internet after the last successful check, and notice a clock that was moved back. When the subscription is no longer active the whole program stops; the <a href="terms.html">Terms of Use</a> say exactly when.</p>
+    <p>Your purchase and payment are handled by Whop, under <a href="https://whop.com/privacy/" rel="noopener noreferrer" target="_blank">Whop&rsquo;s own privacy policy</a>. The program never asks for and never sends any payment or billing detail. As the seller, we receive from Whop what that policy says Whop may share with a seller: &ldquo;the confirmation of your purchase, username, contact and certain account profile information&rdquo;. We use them only to run your subscription and to answer you when you write to us &mdash; never for advertising and never for marketing e-mails. We keep them for those two purposes only, and we delete them when you ask (section&nbsp;08), unless a law requires us to keep them. Whop&rsquo;s own records of your account and your purchase stay under Whop&rsquo;s policy.</p>
   </section>
 
   <section>
@@ -398,8 +418,11 @@
     <ul>
       <li><strong>Your broker.</strong> Orders you place through ALSHAHEEN are sent to your own broker by MetaTrader&nbsp;5. Each order carries the app&rsquo;s identifier (the magic number 20360000 and the comment &ldquo;SHAHEEN_&lt;timeframe&gt;&rdquo;), so your broker can see that it came from ALSHAHEEN. Their privacy policy applies to your account with them.</li>
       <li><strong>MetaQuotes.</strong> MetaTrader&nbsp;5 is their software, installed and signed in by you.</li>
-      <li><strong>Microsoft.</strong> Distribution, payment and subscription management.</li>
-      <li><strong>Google and Cloudflare.</strong> Only the connection described in section&nbsp;04, which shows them your IP address and nothing else.</li>
+      <li><strong>Microsoft.</strong> Distribution, payment and subscription management for a copy from the Microsoft Store.</li>
+      <li><strong>Whop.</strong> For a copy bought on Whop: the sale, the payment and the subscription, under <a href="https://whop.com/privacy/" rel="noopener noreferrer" target="_blank">Whop&rsquo;s privacy policy</a>. The licence server asks Whop about your membership and stores the computer code with it there, and Whop passes us, as the seller, what its policy names: the confirmation of your purchase, your username, &ldquo;contact&rdquo; and certain account profile information (section&nbsp;05).</li>
+      <li><strong>Google and Cloudflare.</strong> The reachability test described in section&nbsp;04, which shows them your IP address and nothing else.</li>
+      <li><strong>Cloudflare, as host of the licence server.</strong> For a copy bought on Whop, the licence check in section&nbsp;05 goes to a server Cloudflare hosts for us. Cloudflare ends the encrypted connection, so it handles the whole request &mdash; the licence key, the computer code, the application&rsquo;s name and version, your IP address and the headers &mdash; and Whop&rsquo;s reply about your membership (section&nbsp;05), and may keep its own records of them, under <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer" target="_blank">Cloudflare&rsquo;s privacy policy</a>.</li>
+      <li><strong>Google Drive.</strong> The ZIP file of a copy bought on Whop, and of each new version, is downloaded from Google Drive. Google sees your IP address when you download it and, if you are signed in to Google in that browser, can tie the download to your Google account.</li>
       <li><strong>GitHub.</strong> These pages are hosted on GitHub Pages; GitHub sees your IP address when you open them.</li>
     </ul>
     <p>There are no other third parties. ALSHAHEEN contains no advertising, no tracking pixels and no third-party analytics.</p>
@@ -407,37 +430,37 @@
 
   <section>
     <h2><span class="num">07</span>Keeping and deleting your data</h2>
-    <p>Because your data never reaches us, there is nothing on our side to retain, export or erase. Everything lives on your machine for as long as you keep it.</p>
-    <p>To remove it: uninstall ALSHAHEEN from Windows Settings. If Windows kept the app&rsquo;s files in its private storage, they are removed with it; otherwise delete the <code>%LOCALAPPDATA%\ALSHAHEEN</code> folder, which holds both folders. If you moved them with the environment variables in section&nbsp;03, delete those folders too. Your broker and MetaQuotes keep their own records of your account and your orders, under their own policies.</p>
+    <p>Your trading data never reaches us, so there is none of it on our side to retain, export or erase. Everything the app writes lives on your machine for as long as you keep it. For a copy bought on Whop, the computer code is stored with your membership at Whop, we hold the purchase details Whop passes to us as the seller, which we delete when you ask unless a law requires us to keep them (section&nbsp;08), and Cloudflare may keep its own records of the licence checks (section&nbsp;05). Whop&rsquo;s own records of your account and your purchase fall under Whop&rsquo;s privacy policy.</p>
+    <p>To remove a copy from the Microsoft Store: uninstall ALSHAHEEN from Windows Settings. If Windows kept the app&rsquo;s files in its private storage, they are removed with it; otherwise delete the <code>%LOCALAPPDATA%\ALSHAHEEN</code> folder, which holds both folders. A copy bought on Whop is not installed, so Windows Settings does not list it: it runs from the folder you unpacked it into. Delete that folder, which holds its <code>data</code> folder (with <code>licence.json</code> in it) and its <code>logs</code> folder, and <code>%LOCALAPPDATA%\ALSHAHEEN</code> if it used that instead. If you moved the folders with the environment variables in section&nbsp;03, delete those folders too. Deleting a copy bought on Whop does not remove the computer code stored with your membership at Whop, or the purchase details we hold: reset your licence key from your Whop orders page, or write to the address in section&nbsp;12 to have the code cleared and the purchase details deleted. Your broker and MetaQuotes keep their own records of your account and your orders, under their own policies.</p>
   </section>
 
   <section>
     <h2><span class="num">08</span>Your rights</h2>
-    <p>Data-protection law gives you the right to access, correct, export and erase personal data a company holds about you. We hold none, so those rights are satisfied by design rather than by request &mdash; every file the app writes is listed in section&nbsp;03 and is on your own computer.</p>
+    <p>Data-protection law gives you the right to access, correct, export and erase personal data a company holds about you. For a copy from the Microsoft Store we hold none, so those rights are satisfied by design rather than by request &mdash; every file the app writes is listed in section&nbsp;03 and is on your own computer. For a copy bought on Whop, we hold the purchase details Whop passes to us as the seller, and the computer code is stored with your membership at Whop (section&nbsp;05). Write to the address in section&nbsp;12 to ask for a copy of what we hold, to have the purchase details deleted &mdash; unless a law requires us to keep them &mdash; or to have the computer code cleared. Whop&rsquo;s own records of your account and your purchase are covered by Whop&rsquo;s privacy policy, and any records Cloudflare keeps of the licence checks by Cloudflare&rsquo;s; both companies may handle data outside your own country. You can also complain to the data-protection authority where you live.</p>
   </section>
 
   <section>
     <h2><span class="num">09</span>Children</h2>
-    <p>ALSHAHEEN is financial software for adults and is not directed at children. It is not intended for anyone under 18, and it collects nothing from anyone of any age.</p>
+    <p>ALSHAHEEN is financial software for adults and is not directed at children. It is not intended for anyone under 18. Apart from the licence check of a copy bought on Whop and the purchase details Whop passes to us as the seller (section&nbsp;05), nothing is collected from anyone of any age.</p>
   </section>
 
   <section>
     <h2><span class="num">10</span>Security</h2>
-    <p>ALSHAHEEN never sees and never stores your broker password &mdash; you sign in to MetaTrader&nbsp;5 yourself. It does write your account number and trade server name into the files listed in section&nbsp;03; treat those files as private. They are ordinary plain-text files, protected by your own Windows user account.</p>
+    <p>ALSHAHEEN never sees and never stores your broker password &mdash; you sign in to MetaTrader&nbsp;5 yourself. It does write your account number and trade server name into the files listed in section&nbsp;03; treat those files as private. They are ordinary plain-text files, protected by your own Windows user account. In a copy bought on Whop, <code>licence.json</code> also holds your licence key in readable form: its seal shows whether it was edited and does not hide what is in it, so keep it as private as the key. The licence check itself travels over HTTPS, and the program verifies the server&rsquo;s certificate before it sends anything.</p>
   </section>
 
   <section>
     <h2><span class="num">11</span>Changes to this policy</h2>
-    <p>If this policy changes, the effective date at the top changes with it and the updated version is published at this address. Material changes will also be noted in the app&rsquo;s Store listing.</p>
+    <p>If this policy changes, the effective date at the top changes with it and the updated version is published at this address. Material changes will also be noted in the app&rsquo;s Store listing and, for copies bought on Whop, on ALSHAHEEN&rsquo;s product page on Whop.</p>
   </section>
 
   <section>
     <h2><span class="num">12</span>Contact</h2>
     <div class="contact">
       <div class="addr"><a href="mailto:alshaheensupport@gmail.com">alshaheensupport@gmail.com</a></div>
-      <div class="note">Write to this address with any question about this policy, about what ALSHAHEEN reads from your computer, or about the files it keeps there. It is also the support address for the Microsoft Store listing.</div>
+      <div class="note">Write to this address with any question about this policy, about what ALSHAHEEN reads from your computer, or about the files it keeps there. It is also the support address for the Microsoft Store listing and for copies bought on Whop.</div>
     </div>
-    <p>Questions about a purchase, a renewal or a refund are handled by Microsoft, not by us &mdash; use the Store&rsquo;s own support, which can see your order and we cannot.</p>
+    <p>For a copy from the Microsoft Store, questions about a purchase, a renewal or a refund are handled by Microsoft, not by us &mdash; use the Store&rsquo;s own support, which can see your order and we cannot. For a copy bought on Whop, write to the address above, including about your licence key, the computer code or the details Whop passes to us, or to have those details deleted. A purchase on Whop is not refunded, except where a consumer-protection law that applies to you requires it; you can cancel its renewal at any time in Whop and keep using the application to the end of the period you have paid for, as the <a href="terms.html">Terms of Use</a> explain (sections&nbsp;05 and&nbsp;14).</p>
   </section>
 
   <footer>
